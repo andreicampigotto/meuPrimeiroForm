@@ -19,12 +19,9 @@ namespace PrimeiroForm
 
         private void txtQuantidade1_TextChanged(object sender, EventArgs e)
         {
-            if (txtQuantidade1.Text == "0")
-            {
-                txtQuantidade1.Text = "";
-            }
-        }
 
+        }
+      
         private void txtValor1_TextChanged(object sender, EventArgs e)
         {
             if (txtValor1.Text == "0")
@@ -211,7 +208,7 @@ namespace PrimeiroForm
             try
             {
 
-                Valor4 = Convert.ToInt32(txtValor4.Text);
+                Valor4 = Convert.ToDouble(txtValor4.Text);
             }
             catch (Exception a)
             {
@@ -219,7 +216,58 @@ namespace PrimeiroForm
                 txtValor4.Focus();
                 return;
             }
+
+            double Total1 = (Quantidade1 * Valor1);
+            double Total2 = (Quantidade2 * Valor2);
+            double Total3 = (Quantidade3 * Valor3);
+            double Total4 = (Quantidade4 * Valor4);
+
+            rtbResultado.Text = txtNome.Text +
+                            "\nTotal " + Total1 +
+                            "\nTotal " + Total2 +
+                            "\nTotal " + Total3 +
+                            "\nTotal " + Total4 +
+                            "\n ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~";
+                            
+           
+            double Total = Total1 + Total2 + Total3 + Total4  ;
+
+            MessageBox.Show("Salvo");
+
+            rtbTotal.Text = "Total: " + Total;
+
+                           
         }
+
+        private void rtbTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtNome.Text = "";
+            txtQuantidade1.Text = "";
+            txtValor1.Text = "";
+            txtQuantidade2.Text = "";
+            txtValor2.Text = "";
+            txtQuantidade3.Text = "";
+            txtValor3.Text = "";
+            txtQuantidade4.Text = "";
+            txtValor4.Text = "";
+            rtbTotal.Text = "";
+        }
+
+        private void rtbResultado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

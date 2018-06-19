@@ -47,7 +47,9 @@
             this.txtQuantidade4 = new System.Windows.Forms.TextBox();
             this.txtValor4 = new System.Windows.Forms.TextBox();
             this.btnCalcular = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.rtbTotal = new System.Windows.Forms.RichTextBox();
+            this.rtbResultado = new System.Windows.Forms.RichTextBox();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNome
@@ -67,6 +69,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(552, 22);
             this.txtNome.TabIndex = 1;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lblQuantidade1
             // 
@@ -247,23 +250,48 @@
             this.btnCalcular.UseVisualStyleBackColor = true;
             this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
-            // textBox1
+            // rtbTotal
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.GhostWhite;
-            this.textBox1.Location = new System.Drawing.Point(294, 259);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 66);
-            this.textBox1.TabIndex = 19;
+            this.rtbTotal.Enabled = false;
+            this.rtbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbTotal.Location = new System.Drawing.Point(294, 259);
+            this.rtbTotal.Name = "rtbTotal";
+            this.rtbTotal.Size = new System.Drawing.Size(148, 66);
+            this.rtbTotal.TabIndex = 20;
+            this.rtbTotal.TabStop = false;
+            this.rtbTotal.Text = "";
+            this.rtbTotal.TextChanged += new System.EventHandler(this.rtbTotal_TextChanged);
+            // 
+            // rtbResultado
+            // 
+            this.rtbResultado.Enabled = false;
+            this.rtbResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbResultado.Location = new System.Drawing.Point(470, 51);
+            this.rtbResultado.Name = "rtbResultado";
+            this.rtbResultado.Size = new System.Drawing.Size(284, 158);
+            this.rtbResultado.TabIndex = 21;
+            this.rtbResultado.Text = "";
+            this.rtbResultado.TextChanged += new System.EventHandler(this.rtbResultado_TextChanged);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Location = new System.Drawing.Point(470, 255);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(145, 70);
+            this.btnLimpar.TabIndex = 22;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // PrimeiroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 451);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.rtbResultado);
+            this.Controls.Add(this.rtbTotal);
             this.Controls.Add(this.btnCalcular);
             this.Controls.Add(this.txtValor4);
             this.Controls.Add(this.txtQuantidade4);
@@ -311,7 +339,9 @@
         private System.Windows.Forms.TextBox txtQuantidade4;
         private System.Windows.Forms.TextBox txtValor4;
         private System.Windows.Forms.Button btnCalcular;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RichTextBox rtbTotal;
+        private System.Windows.Forms.RichTextBox rtbResultado;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }
 
